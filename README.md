@@ -20,16 +20,16 @@ mvn clean package
 
 После сборки утилиты вы можете запустить её с помощью команды:
 
-java -jar target/file-filter-utility-1.0-SNAPSHOT.jar [опции] <список файлов>
+java -jar target/filter-1.0-SNAPSHOT.jar [опции] <список файлов>
 
 Пример команды:
 
-Java -jar target/ file-filter-utility-1.0-SNAPSHOT.jar -s -a -p sample- in1.txt in2.txt
+Java -jar target/filter-1.0-SNAPSHOT.jar -s -a -p sample- in1.txt in2.txt
 
 
 Когда вы запускаете утилиту с командой:
 
-java -jar target/file-filter-utility-1.0-SNAPSHOT.jar -s -a -p sample- in1.txt in2.txt
+java -jar target/filter-1.0-SNAPSHOT.jar -s -a -p sample- in1.txt in2.txt
 файлы in1.txt и in2.txt, которые вы указываете в команде, должны находиться в текущей директории, откуда вы запускаете команду. 
 В этом случае Java будет искать эти файлы относительно текущей рабочей директории.
 
@@ -43,15 +43,15 @@ java -jar target/file-filter-utility-1.0-SNAPSHOT.jar -s -a -p sample- in1.txt i
 
 /home/user/project/
 │
+└── target/
+    └──filter-1.0-SNAPSHOT.jar
 ├── in1.txt
 ├── in2.txt
-└── target/
-    └── file-filter-utility-1.0-SNAPSHOT.jar
 
 Альтернативный способ указания пути к файлам
 Если файлы in1.txt и in2.txt находятся в другой директории, вы можете указать их полный или относительный путь в команде:
 
-java -jar target/file-filter-utility-1.0-SNAPSHOT.jar -s -a -p sample- /path/to/in1.txt /path/to/in2.txt
+java -jar target/filter-1.0-SNAPSHOT.jar -s -a -p sample- /path/to/in1.txt /path/to/in2.txt
 где /path/to/in1.txt и /path/to/in2.txt — это полный путь к вашим входным файлам.
 
 Итог:
