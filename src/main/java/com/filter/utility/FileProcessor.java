@@ -40,7 +40,16 @@ public class FileProcessor {
             }
         }
         if (files.isEmpty()) {
-            throw new IllegalArgumentException("No input files provided");
+
+            StringBuilder message = new StringBuilder("Не предоставлены входные данные:\n") ;
+            message.append("java -jar target/filter-1.0-SNAPSHOT.jar [опции] <список файлов>\n");
+            message.append("-o путь для результатов\n");
+            message.append("-p префикс имен выходных файлов\n");
+            message.append("-a новые результаты добавляются к предыдущим\n");
+            message.append("-s краткая статистика\n");
+            message.append("-f полная статистика\n");
+
+            throw new IllegalArgumentException(message.toString());
         }
         for (String file : files) {
             processFile(Paths.get(file));
@@ -54,7 +63,7 @@ public class FileProcessor {
                 processLine(line);
             }
         } catch (IOException e) {
-            System.err.println("Failed to process file: " + filePath);
+            System.err.println("Не удалось обработать файл: " + filePath);
         }
     }
 
